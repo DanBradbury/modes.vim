@@ -54,11 +54,11 @@ def CtermToRGB(cterm: number): list<number>
     endif
 enddef
 
-def RGBToCterm(r: number, g: number, b: number): number
+def RGBToCterm(r: number, _g: number, _b: number): number
     # Try to match to the 6x6x6 color cube for best results
     var ri = float2nr(round(r / 51.0))
-    var gi = float2nr(round(g / 51.0))
-    var bi = float2nr(round(b / 51.0))
+    var gi = float2nr(round(_g / 51.0))
+    var bi = float2nr(round(_b / 51.0))
 
     # Clamp to valid range
     ri = min([max([ri, 0]), 5])
