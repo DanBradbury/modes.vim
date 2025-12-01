@@ -1,7 +1,10 @@
 <div align="center">
 
 # modes.vim
-> Prismatic line decorations for the adventurous **vim** users
+
+[![Lint](https://github.com/DanBradbury/modes.vim/actions/workflows/lint.yml/badge.svg)](https://github.com/DanBradbury/modes.vim/actions/workflows/lint.yml)
+
+Prismatic line decorations for the adventurous **vim** users
 
 ![](https://github.com/user-attachments/assets/b87ff98d-639b-459f-9a35-7c3df36fd5fb)
 
