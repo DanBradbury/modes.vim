@@ -36,8 +36,7 @@ export def TrackOperator(op: string): string
     return 'd'
   elseif op ==# 'replace'
     g:modes_pending_operator = 'replace'
-    var ctbg = color.ComputeBlendedColorCterm(g:modes_colors.replace.term, cterm_blend)
-    execute $'highlight CursorLine guibg={color.ComputeBlendedColor(g:modes_colors.replace.gui, gui_blend)} ctermbg={ctbg}'
+    execute $'highlight CursorLine guibg={color.ComputeBlendedColor(g:modes_colors.replace.gui, gui_blend)} cterm=underline ctermul={g:modes_colors.replace.term}'
     return 'r'
   endif
   return ''
@@ -61,18 +60,15 @@ enddef
 
 export def SetInsertModeCursorline()
   var blended = color.ComputeBlendedColor(g:modes_colors.insert.gui, gui_blend)
-  var ctbg = color.ComputeBlendedColorCterm(g:modes_colors.insert.term, cterm_blend)
-  execute $'highlight CursorLine guibg={blended} ctermbg={ctbg}'
+  execute $'highlight CursorLine guibg={blended} cterm=underline ctermul={g:modes_colors.insert.term}'
 enddef
 
 export def SetReplaceHighlight()
   var blended = color.ComputeBlendedColor(g:modes_colors.replace.gui, gui_blend)
-  var ctbg = color.ComputeBlendedColorCterm(g:modes_colors.replace.term, cterm_blend)
-
-  execute $'highlight CursorLine guibg={blended} ctermbg={ctbg}'
+  execute $'highlight CursorLine guibg={blended} cterm=underline ctermul={g:modes_colors.replace.term}'
 enddef
 
 export def SetNormalModeCursorline()
-  highlight CursorLine guibg=NONE ctermbg=NONE
+  highlight CursorLine guibg=NONE ctermbg=NONE cterm=NONE
   highlight LineNr guibg=NONE ctermbg=NONE
 enddef
